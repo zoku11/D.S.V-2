@@ -1,1 +1,20 @@
-<p>list-holidays works!</p>
+<mat-card>
+  <h2>Festivos del año</h2>
+
+  <mat-form-field appearance="fill">
+    <input matInput type="number" [(ngModel)]="year" placeholder="Año" />
+  </mat-form-field>
+
+  <button mat-raised-button color="accent" (click)="buscar()">
+    Buscar
+  </button>
+</mat-card>
+
+<ngx-datatable
+  class="material"
+  [rows]="rows"
+  [columns]="columns"
+  [columnMode]="'force'"
+  [headerHeight]="40"
+  [rowHeight]="'auto'">
+</ngx-datatable>

@@ -1,1 +1,20 @@
-<p>check-holiday works!</p>
+<mat-card>
+  <h2>¿Es festivo?</h2>
+
+  <mat-form-field appearance="fill">
+    <input matInput type="date" [(ngModel)]="fecha" />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="consultar()">
+    Consultar
+  </button>
+
+  <p *ngIf="respuesta !== null">
+    <strong>{{ fecha }}</strong> →
+    <span [style.color]="respuesta ? 'green' : 'red'">
+      {{ respuesta ? 'Es festivo' : 'No es festivo' }}
+    </span>
+  </p>
+</mat-card>
+
+
